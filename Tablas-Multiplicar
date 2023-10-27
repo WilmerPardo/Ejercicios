@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define LETRACYANL "\033[96m"
+#define LETRAVERDEL "\033[92m"
+#define LETRAVERDE "\033[32m"
+#define LETRAMAGENTAL "\033[95m"
+#define LETRADEFAULT "\033[0m"
+#define LETRAAMARILLAB "\033[33m"
+#define LETRAAMARILLABL "\033[93m"
+#define LETRACYAN "\033[36m"
+int main ()
+{
+  
+  printf("%s\t\t\t\t\t===Bienvenido a mi programa===%s\n", LETRAAMARILLAB, LETRADEFAULT);
+  printf("%sTe ayudare a Aprender las Tablas de Multiplicacion, solo tienes que ingresar la tabla que te gustaria aprender%s\n", LETRACYAN, LETRADEFAULT);
+ 
+ char option;
+
+  do
+  {
+    int numero, i, resultado;
+    
+    printf("¿Que tabla deseas Aprender?\n");
+    scanf("%d", &numero);
+    if (numero > 0)
+    {
+      i = 0;
+    
+    printf("%s==================================== Tabla de Multiplicar del Numero %d ====================================%s\n", LETRACYAN, numero, LETRADEFAULT);
+    
+    do
+    {
+      resultado = numero * i;
+    printf("\n %s\t\t\t\t\t\t%d * %d = %d %s\n", LETRAVERDEL, numero, i, resultado, LETRADEFAULT);
+    i++;
+    } while (i <= 15);
+    
+    printf("%sDesea Aprender otra Tabla de Multiplicar para aceptar preciona[S], caso contrario preciona cualquier tecla%s\n", LETRAVERDE, LETRADEFAULT);
+    getchar();
+    scanf("%c", &option);
+
+    }
+    else
+    {
+      printf("%sIngresa un numero positivo%s\n", LETRAAMARILLABL, LETRADEFAULT);
+      printf("%sSi deseas Intentarlo de nuevo preciona[S], caso contrario preciona cualquier tecla%s\n", LETRAVERDE, LETRADEFAULT);
+      getchar();
+      scanf("%c", &option);
+    }
+    
+    
+  } while ( option == 'S');
+
+  printf("%s============= Gracias por usar mi programa =============%s\n", LETRAMAGENTAL, LETRADEFAULT);
+  printf("%s=============== Espero Haberte ayudado =================%s", LETRAMAGENTAL, LETRADEFAULT);
+  
+
+ return 0;
+
+}
