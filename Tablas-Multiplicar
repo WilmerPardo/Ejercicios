@@ -9,6 +9,15 @@
 #define LETRAAMARILLAB "\033[33m"
 #define LETRAAMARILLABL "\033[93m"
 #define LETRACYAN "\033[36m"
+
+void imprimirTabla(int numero) {
+    printf("%s==================================== Tabla de Multiplicar del Numero %d ====================================%s\n", LETRACYAN, numero, LETRADEFAULT);
+ for (int i = 0; i <= 15; i++) {
+        int resultado = numero * i;
+        printf("\n %s\t\t\t\t\t\t%d * %d = %d %s\n", LETRAVERDEL, numero, i, resultado, LETRADEFAULT);
+    }
+}
+
 int main ()
 {
   
@@ -25,21 +34,10 @@ int main ()
     scanf("%d", &numero);
     if (numero > 0)
     {
-      i = 0;
-    
-    printf("%s==================================== Tabla de Multiplicar del Numero %d ====================================%s\n", LETRACYAN, numero, LETRADEFAULT);
-    
-    do
-    {
-      resultado = numero * i;
-    printf("\n %s\t\t\t\t\t\t%d * %d = %d %s\n", LETRAVERDEL, numero, i, resultado, LETRADEFAULT);
-    i++;
-    } while (i <= 15);
-    
-    printf("%sDesea Aprender otra Tabla de Multiplicar para aceptar preciona[S], caso contrario preciona cualquier tecla%s\n", LETRAVERDE, LETRADEFAULT);
-    getchar();
-    scanf("%c", &option);
-
+     imprimirTabla(numero);
+            printf("%sDesea Aprender otra Tabla de Multiplicar para aceptar presiona [S], caso contrario presiona cualquier tecla%s\n", LETRAVERDE, LETRADEFAULT);
+            getchar();
+            scanf(" %c", &option);
     }
     else
     {
