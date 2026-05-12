@@ -1,0 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+struct Fecha
+{
+    int dia, mes, año;
+};
+
+
+
+int main ()
+{
+ 
+ struct Fecha nacimiento;
+ struct Fecha edad;
+ struct Fecha actual;
+
+ printf("Ingrese la Fecha Actual\n");
+ printf("Ingrese el Dia: ");
+ scanf("%d", &actual.dia);
+ printf("Ingrese el Mes: ");
+ scanf("%d", &actual.mes);
+ printf("Ingrese el Año: ");
+ scanf("%d", &actual.año);
+
+ printf("-----------------------------\n");
+
+ printf("Ingrese la Fecha de Nacimiento\n");
+ printf("Ingrese el Dia: ");
+ scanf("%d", &nacimiento.dia);
+ printf("Ingrese el Mes: ");
+ scanf("%d", &nacimiento.mes);
+ printf("Ingrese el Año: ");
+ scanf("%d", &nacimiento.año);
+
+ printf("-----------------------------\n");
+
+ if (actual.mes > nacimiento.mes)
+ {
+    edad.año = actual.año - nacimiento.año;
+    edad.mes = (actual.mes - nacimiento.mes);
+    edad.dia = actual.dia - 1;
+    edad.dia = (31 - nacimiento.dia) + edad.dia;
+ }
+ else
+ {
+  if (actual.mes < nacimiento.mes)
+  {
+    actual.año = actual.año - 1;
+    edad.año = actual.año - nacimiento.año;
+    edad.mes = nacimiento.mes - actual.mes;
+    edad.mes = (12 - edad.mes) - 1;
+    edad.dia = actual.dia - 1;
+    edad.dia = (31 - nacimiento.dia) + edad.dia;
+   }
+    else
+    {
+        if (actual.mes = nacimiento.mes)
+        {
+            edad.año = actual.año - nacimiento.año;
+            edad.mes = actual.mes * 0;
+            edad.dia = nacimiento.dia - actual.dia;
+        }
+        
+    }
+    
+ }
+  if (edad.dia < 0)
+    {
+        edad.dia = edad.dia * -1;
+    }
+
+
+  printf("Su Edad Actual es: %d\n", edad.año);
+  printf("Sus Meses son: %d\n", edad.mes);
+  printf("Sus Dias son: %d\n", edad.dia);
+
+return 0;
+}

@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main()
+{
+float edad;
+
+printf("Ingrese la Edad: ");
+scanf("%f", &edad);
+
+if (edad >= 0 && edad <= 1)
+{
+    printf("RECIEN NACIDO");
+}
+else
+{
+    if (edad >1 && edad <= 5)
+      {  
+        printf("INFANTE");
+    }
+    else
+    {
+        if (edad >=6 && edad <= 12)
+        {
+            printf("NIÑEZ");
+        }
+        else
+        {
+            if (edad >=13 && edad <= 17)
+            {
+                printf("ADOLESCENTE");
+            }
+            else
+            {
+                if (edad >=18 && edad <= 64)
+                {
+                    printf("ADULTO");
+                }
+                else
+                {
+                  if (edad > 64)
+                  {
+                    printf("TERCERA EDAD");
+                  }
+                  
+                }
+                
+            }
+            
+        }
+        
+    }
+    
+}
+
+
+
+
+
+}

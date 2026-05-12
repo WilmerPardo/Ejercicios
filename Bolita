@@ -1,0 +1,62 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+enum Bolita{ BLANCA = 1, VERDE, AMARILLA, AZUL, ROJO};
+
+
+struct Comprobante
+{
+    float pagototal, porcentajeDscto, valorDscto, subtotal;
+};
+
+int main()
+{
+    struct Comprobante comprobante;
+  
+
+    srand(time(0));
+
+
+    printf("Ingrese el Valor de la compra del Cliente: ");
+    scanf("%f", &comprobante.subtotal);
+    
+    srand(time(0));
+    int NumeroRandom = rand()% 5;
+    switch (NumeroRandom)
+    {
+     
+     case VERDE:
+        printf("-------BOLITA VERDE------");
+        comprobante.porcentajeDscto = 10;
+        break;
+     case AMARILLA:
+       printf("-------BOLITA AMARILLA------");
+       comprobante.porcentajeDscto = 25;
+        break;
+     case AZUL:
+        printf("-------BOLITA AZUL------");
+        comprobante.porcentajeDscto = 50;
+        break;
+        case ROJO:
+        printf("-------BOLITA ROJA------");
+        comprobante.porcentajeDscto = 100;
+        break;
+     default:
+        comprobante.porcentajeDscto = 0;
+        break;
+    }
+    
+    comprobante.valorDscto = comprobante.subtotal * (comprobante.porcentajeDscto / 100);
+    comprobante.pagototal = comprobante.subtotal - comprobante.valorDscto;
+
+    printf("Resumen pago del comprobante\n");
+    printf("-----------------------------------\n");
+    printf("SUBTOTAL ==>\t%.2f\n", comprobante.subtotal);
+    printf("DESCUENTO %.2f", comprobante.porcentajeDscto);
+    printf(" ==>\t%.2f\n", comprobante.valorDscto);
+    printf("PAGO TOTAL ==>\t%.2f", comprobante.pagototal);
+
+
+    return 0;
+}
